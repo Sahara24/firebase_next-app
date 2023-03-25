@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -104,4 +104,88 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.loader {
+  border: 2px solid #fff;
+  width: 48px;
+  height: 48px;
+  background: #ff3d00;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  transition: cubic-bezier(0.86, 0, 0.07, 1);
+  animation: rotation 2.5s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 24px solid;
+  border-color: transparent #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    background: rgb(222, 101, 101);
+  }
+  100% {
+    transform: rotate(360deg);
+    background: rgb(112, 223, 112);
+  }
+}
+.aboutPage {
+  padding-top: 80px;
+  height: 100vh;
+  background-color: white;
+}
+.Navbar {
+  height: 30px;
+  width: 100%;
+  background-color: rgb(244, 242, 242);
+  display: flex;
+  padding: 28px 25px;
+  border: 1px solid rgba(186, 184, 184, 0.787);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  position: fixed;
+}
+.list {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+}
+.loginBtn {
+  height: 2rem;
+  padding: 5px 16px;
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.listBtns {
+  display: flex;
+  gap: 8px;
+}
+.signInWithGoogle {
+  background-color: white;
+  color: rgba(2, 2, 21, 0.798);
+  border: 1px solid rgb(172, 169, 169);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px;
 }
